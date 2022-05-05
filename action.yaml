@@ -1,7 +1,7 @@
 name: 'Bump version and set tag'
 description: 'Bump the version and sets the tag'
 outputs:
-  repository:
+  tag:
     description: 'Tag string'
     value: ${{ steps.set-tag.outputs.tag }}
 runs:
