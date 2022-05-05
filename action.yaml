@@ -8,6 +8,7 @@ runs:
   using: 'composite'
   steps: 
     - run: ./bumpversion.sh
+      shell: bash
     - id: set-tag
       run: echo "::set-output name=tag::v$(cat VERSION)"
       shell: bash
