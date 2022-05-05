@@ -1,0 +1,13 @@
+name: 'Bump version and set tag'
+description: 'Bump the version and sets the tag'
+outputs:
+  repository:
+    description: 'Tag string'
+    value: ${{ steps.set-tag.outputs.tag }}
+runs:
+  using: 'composite'
+  steps: 
+    - run: ./bumpversion.sh
+    - id: set-tag
+      run: echo "::set-output name=tag::v$(cat VERSION)"
+      shell: bash
